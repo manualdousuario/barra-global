@@ -1,4 +1,14 @@
 name = "barra-global"
+main = "./worker.js"
 workers_dev = true
 
 compatibility_date = "2020-12-17"
+
+
+# Top-level configuration
+name = "barra-global"
+main = "./worker.js"
+compatibility_date = "2025-04-29"
+
+workers_dev = false
+route = { pattern = "pcdomanual.com/*", zone_name = "pcdomanual.com" }

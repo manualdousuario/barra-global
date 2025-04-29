@@ -2,4 +2,3 @@ name = "barra-global"
 workers_dev = true
 
 compatibility_date = "2020-12-17"
-node_compat = true

@@ -1,0 +1,34 @@
+class ElementHandler {
+	element(element) {
+		element.prepend(`<style > body{padding-top:0 !important;margin:0 0 0 auto !important}.top-bar-S8u2jhdY7E{background:hsl(0, 0%, 97%);font-size:14px;font-family:ui-monospace, monospace;display:flex;align-items:center;justify-content:center;column-gap:1.5rem;z-index:99999;padding-inline:1rem;height:36px}.top-bar-S8u2jhdY7E *{margin:0;padding:0}.top-bar-S8u2jhdY7E h3{margin-top:16px;z-index:999}.top-bar-S8u2jhdY7E h3 img{max-width:33px;height:38px}.top-bar-S8u2jhdY7E ul{list-style:none;display:flex;flex-wrap:nowrap;column-gap:1rem;white-space:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}.top-bar-S8u2jhdY7E li{margin:0}.top-bar-S8u2jhdY7E ul li a{padding:10px 6px}.top-bar-S8u2jhdY7E a{flex-shrink:0}.top-bar-S8u2jhdY7E a:active{font-weight:bold}.top-bar-S8u2jhdY7E a,.top-bar-S8u2jhdY7E a:visited{color:hsl(229, 100%, 39%)}.top-bar-S8u2jhdY7E a:hover{color:hsl(240, 63%, 27%)}.top-bar-S8u2jhdY7E .apoie a{text-decoration:none}.top-bar-S8u2jhdY7E .apoie a span{text-decoration:underline}@media (max-width: 900px){.top-bar-S8u2jhdY7E{justify-content:start;padding-right:0}.top-bar-S8u2jhdY7E{column-gap:1rem}.top-bar-S8u2jhdY7E ul{column-gap:0.5rem;padding-right:1rem}}@media (prefers-color-scheme: dark){.top-bar-S8u2jhdY7E{background-color:hsl(0, 0%, 18%);box-shadow:none}.top-bar-S8u2jhdY7E h3 img{filter: invert(1)}.top-bar-S8u2jhdY7E a,.top-bar-S8u2jhdY7E a:visited{color:hsl(224, 100%, 71%)}.top-bar-S8u2jhdY7E a:hover{color:hsl(224, 100%, 83%)}}.top-bar-S8u2jhdY7E::-webkit-scrollbar{display:none}</style>
+    <div class="top-bar-S8u2jhdY7E">
+  <h3>
+    <a href="https://manualdousuario.net/">
+      <img src="https://manualdousuario.net/wp-content/themes/dez/img/logo-manual-top-bar.avif" height="38" width="33" alt>
+    </a>
+  </h3>
+  <ul>
+    <li><a href="https://manualdousuario.net/orbita/">Órbita</a></li>
+    <li class="apoie"><a href="https://manualdousuario.net/apoie/">⭐️<span>Assine</span></a></li>
+    <li><a href="https://pcdomanual.com/">PC do Manual</a></li>
+    <li><a href="https://manualdousuario.net/podcast/">Podcasts</a></li>
+    <li><a href="https://manualdousuario.net/loja/">Lojinha</a></li>
+    <li><a href="https://manualdousuario.net/newsletters-brasileiras/">Diretório de newsletters</a></li>
+    <li><a href="https://lerama.pcdomanual.com">Lerama</a></li>
+  </ul>
+</div>`, {html: true});
+		console.log("injected");
+	}
+}
+async function handleRequest(req) {
+	const res = await fetch(req)
+	return new HTMLRewriter().on("body", new ElementHandler()).transform(res)
+}
+
+addEventListener("fetch", (event) => {
+	event.respondWith(
+		handleRequest(event.request).catch(
+			(err) => new Response(err.stack, { status: 500 })
+			)
+		);
+});

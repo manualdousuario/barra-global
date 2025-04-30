@@ -3,4 +3,4 @@ main = "./worker.js"
 compatibility_date = "2025-04-29"
 no_bundle = true
 workers_dev = false
-route = { pattern = "pcdomanual.com/*", zone_name = "pcdomanual.com" }
+route = { pattern = "*.pcdomanual.com/*", zone_name = "pcdomanual.com" }

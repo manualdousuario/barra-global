@@ -1,5 +1,24 @@
 class ElementHandler {
   element(element) {
+    // Modifica a meta tag de CSP para incluir o novo nonce
+    element.prepend(`
+      <script>
+        (function() {
+          const metaCSP = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
+          if (metaCSP) {
+            // Obtém o conteúdo atual da CSP
+            let cspContent = metaCSP.getAttribute('content');
+            // Adiciona o novo nonce ao style-src
+            const newNonce = 'nonce-p5b2j8dMij';
+            const styleSrcRegex = /style-src ([^;]*)/;
+            cspContent = cspContent.replace(styleSrcRegex, `style-src $1 'nonce-${newNonce}'`);
+            // Atualiza a meta tag com o novo conteúdo
+            metaCSP.setAttribute('content', cspContent);
+          }
+        })();
+      </script>
+    `, { html: true });
+    
     // Cria um novo elemento <style>
     const style = `
       :root { --altura: 36px; }

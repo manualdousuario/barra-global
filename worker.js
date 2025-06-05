@@ -18,7 +18,7 @@ class ElementHandler {
         })();
       </script>
     `, { html: true });
-    
+
     // Cria um novo elemento <style>
     const style = `
       :root { --altura: 36px; }

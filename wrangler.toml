@@ -3,7 +3,7 @@ main = "./worker.js"
 compatibility_date = "2025-04-29"
 no_bundle = true
 workers_dev = false
-route = [
+routes = [
 	{ pattern = "pcdomanual.com/*", zone_name = "pcdomanual.com" },
 	{ pattern = "wallabag.pcdomanual.com/*", zone_name = "pcdomanual.com" },
 	{ pattern = "marreta.pcdomanual.com/*", zone_name = "pcdomanual.com" },

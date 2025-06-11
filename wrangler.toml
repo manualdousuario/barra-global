@@ -9,7 +9,6 @@ routes = [
 	{ pattern = "marreta.pcdomanual.com/*", zone_name = "pcdomanual.com" },
 	{ pattern = "sintoniza.pcdomanual.com/*", zone_name = "pcdomanual.com" },
 	{ pattern = "lerama.pcdomanual.com/*", zone_name = "pcdomanual.com" },
-	{ pattern = "miniflux.pcdomanual.com/*", zone_name = "pcdomanual.com" },
 	{ pattern = "busca.pcdomanual.com/*", zone_name = "pcdomanual.com" },
 	{ pattern = "linkding.pcdomanual.com/*", zone_name = "pcdomanual.com" }
 ]

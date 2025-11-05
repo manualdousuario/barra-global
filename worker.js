@@ -8,7 +8,6 @@ class ElementHandler {
   <li><a href="https://pcdomanual.com/">PC do Manual</a></li>
   <li><a href="https://manualdousuario.net/podcast/">Podcasts</a></li>
   <li><a href="https://manualdousuario.net/loja/">Lojinha</a></li>
-  <li><a href="https://manualdousuario.net/newsletters-brasileiras/">Newsletters BR</a></li>
   <li><a href="https://lerama.pcdomanual.com">Lerama</a></li>
 </ul>`, {html: true});
 		console.log("injected");

@@ -31,7 +31,6 @@ function jhahyge3678a() {
     ['PC do Manual', 'https://pcdomanual.com/'],
     ['Podcasts', 'https://manualdousuario.net/podcast/'],
     ['Lojinha', 'https://manualdousuario.net/loja/'],
-    ['Newsletters BR', 'https://manualdousuario.net/newsletters-brasileiras/'],
     ['Lerama', 'https://lerama.pcdomanual.com'],
   ];
 
